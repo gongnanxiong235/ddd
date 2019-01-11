@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>name:{{ name }}</h2>
+    <h2>number:{{ number }}</h2>
+    <h2>mylist:{{ mylist }}</h2>
+    {#  列表中的第一个值  #}
+    <h2>mylist[0]:{{ mylist.0 }}</h2>
+    <h2>mydict.name:{{ mydict.name }}</h2>
+    <h2>mydict.age:{{ mydict.age }}</h2>
+    {#  根据字典的key取value  #}
+    <h2>mydict.job:{{ mydict.job }}</h2>
+    {#  列表中第二个值得name属性  #}
+    <h2>person.name:{{ personList.1.name }}</h2>
+    {#  方法  #}
+    <h2>method::{{ personList.1.fun }}</h2>
+    <h2>object::{{ personList.1 }}</h2>
+    {#  句点符也可以用来引用对象的方法(无参数方法)  #}
+    <h2>upper::{{ personList.1.name.upper }}</h2>
+    <h1 style="color: red">模板语法之标签：</h1>
+
+    {#  for 循环  #}
+    {% for person in personList %}
+            <h2>{{ person }}</h2>
+    {% endfor %}
+    {#  for 循环 下标  倒序  #}
+    {% for person in personList reversed %}
+        <h2>{{ forloop.counter0 }}:{{ person }}</h2>
+    {% endfor %}
+    {#  for 循环 字典 #}
+    {% for key,value in mydict.items %}
+        <h3>{{ key }}:{{ value }}</h3>
+    {% endfor %}
+
+    {# for....empty ：for 标签带有一个可选的{% empty %} 从句，以便在给出的组是空的或者没有被找到时，可以有所操作。 #}
+    {% for person in person_list %}
+        <p>{{ person.name }}</p>
+
+    {% empty %}
+        <p>sorry,no person here</p>
+    {% endfor %}
+    {#  if标签 ：{% if %}会对一个变量求值，如果它的值是“True”（存在、不为空、且不是boolean类型的false值），对应的内容块会输出 #}
+    {% if i > 300 %}
+    <p>大于{{ i }}</p>
+    {% elif i == 200  %}
+        <p>等于{{ i }}</p>
+    {% else %}
+        <p>小于{{ i }}</p>
+    {% endif %}
+
+    {# csrf_token：这个标签用于跨站请求伪造保护 #}
+    <p>default过滤器：{{ li|default:"如果显示为空，设置的解释性的内容" }}</p>
+    <p>{{ name|length }}</p>
+    {# 长度 #}
+    <p>{{ personList|length }}</p>
+    <p>{{ personList|filesizeformat }}</p>
+    {# 分片 #}
+    <p>{{ name|slice:"1:4" }}</p>
+    {# 日期格式的转义 #}
+    <p>{{ date|date:'Y-m-d' }}</p>
+    {# 截断字符串用...显示 #}
+    <p>{{ name|truncatechars:8 }}</p>
+    {# |safe”的方式告诉Django这段代码是安全的不必转义 #}
+    {{ safe|safe }}
+</body>
+</html>

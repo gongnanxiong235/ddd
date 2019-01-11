@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .page-header{
+            height: 50px;
+            background-color: burlywood;
+        }
+        .page-body .body-menu{
+            float: left;
+            height: 810px;
+            width: 10%;
+            background: blueviolet;
+        }
+        .page-body .body-content{
+            float: left;
+            height: 810px;
+            width: 90%;
+            background: cornflowerblue;
+        }
+        .page-footer{
+            height: 50px;
+            background: bisque;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="page-header"></div>
+    <div class="page-body">
+        <div class="body-menu">
+            <a href="/weixin/order/">订单</a><br>
+            <a href="/weixin/shopping/">购物车</a>
+        </div>
+        {#  把公共区域用块占位  #}
+        {% block content %}
+            <div class="body-content">
+                我是订单页面
+            </div>
+        {% endblock %}
+    </div>
+    <div class="page-footer"></div>
+</div>
+
+
+</body>
+</html>

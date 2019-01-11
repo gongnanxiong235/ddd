@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+hello
+<ul>
+    {% for object in objects %}
+        {% if forloop.first %}<li class="test">
+        {% else %}<li>{% endif %}
+        {{ object }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
