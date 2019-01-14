@@ -4,15 +4,13 @@
     <list default="true" id="9becc73f-6adf-43c7-9f28-aa75b6757ca9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/de621f57-be0d-4170-8798-3da93af881ee.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5c64b327-8c12-4c81-ac7f-29e8fe988d40.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5c64b327-8c12-4c81-ac7f-29e8fe988d40.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7f304a1d-b39b-4bba-9869-5ce889e589b3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7f304a1d-b39b-4bba-9869-5ce889e589b3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce2a5c40-1b19-4b37-96f9-dbc3829718c6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce2a5c40-1b19-4b37-96f9-dbc3829718c6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/myset.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myset.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myset/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/myset/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myset/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myset/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/weixin/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weixin/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/weixin/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weixin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/weixin/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weixin/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/weixin/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weixin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/weixin/urls.py" afterDir="false" />
@@ -25,8 +23,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/djangotest$tests.coverage" NAME="tests Coverage Results" MODIFIED="1547306355925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
     <SUITE FILE_PATH="coverage/djangotest$views.coverage" NAME="views Coverage Results" MODIFIED="1547222685785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
+    <SUITE FILE_PATH="coverage/djangotest$tests.coverage" NAME="tests Coverage Results" MODIFIED="1547306355925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
+    <SUITE FILE_PATH="coverage/myset$views.coverage" NAME="views Coverage Results" MODIFIED="1547461063448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
+    <SUITE FILE_PATH="coverage/myset$tests.coverage" NAME="tests Coverage Results" MODIFIED="1547461417200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -40,10 +40,6 @@
       <set />
     </option>
     <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-      </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="permission@47.98.117.129" type="feb32156:DbDataSourceImpl" />
@@ -74,23 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weixin/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weixin/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="161" column="9" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -98,8 +82,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myset/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1494">
-              <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+            <state relative-caret-position="457">
+              <caret line="87" column="31" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+              <folding>
+                <element signature="e#629#661#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,45 +109,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myset/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="14" selection-end-line="1" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f304a1d-b39b-4bba-9869-5ce889e589b3/console.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weixin/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weixin/apps.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/weixin/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1786">
-              <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+            <state relative-caret-position="461">
+              <caret line="107" column="45" lean-forward="true" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
               <folding>
                 <element signature="e#0#76#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://7f304a1d-b39b-4bba-9869-5ce889e589b3/schema/permission/table/weixin_author">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -192,19 +166,20 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/odered.html" />
         <option value="$PROJECT_DIR$/templates/li.html" />
-        <option value="$PROJECT_DIR$/weixin/urls.py" />
-        <option value="$PROJECT_DIR$/weixin/models.py" />
-        <option value="$PROJECT_DIR$/weixin/tests.py" />
-        <option value="$PROJECT_DIR$/weixin/views.py" />
-        <option value="$PROJECT_DIR$/myset/settings.py" />
         <option value="/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/backends/mysql/base.py" />
         <option value="$PROJECT_DIR$/weixin/migrations/__init__.py" />
         <option value="$PROJECT_DIR$/myset/__init__.py" />
         <option value="$PROJECT_DIR$/weixin/admin.py" />
+        <option value="$PROJECT_DIR$/weixin/models.py" />
+        <option value="$PROJECT_DIR$/weixin/tests.py" />
+        <option value="$PROJECT_DIR$/weixin/urls.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/weixin/views.py" />
+        <option value="$PROJECT_DIR$/myset/settings.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="834" />
@@ -219,27 +194,22 @@
         <subPane>
           <expand>
             <path>
-              <item name="djangotest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djangotest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djangotest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djangotest" type="462c0819:PsiDirectoryNode" />
+              <item name="myset" type="b2602c69:ProjectViewProjectNode" />
               <item name="myset" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="djangotest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djangotest" type="462c0819:PsiDirectoryNode" />
+              <item name="myset" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myset" type="462c0819:PsiDirectoryNode" />
+              <item name="myset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myset" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myset" type="462c0819:PsiDirectoryNode" />
               <item name="statics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="djangotest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djangotest" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djangotest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djangotest" type="462c0819:PsiDirectoryNode" />
+              <item name="myset" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myset" type="462c0819:PsiDirectoryNode" />
               <item name="weixin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -329,9 +299,9 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="myset.settings" />
       </envs>
-      <option name="SDK_HOME" value="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -345,6 +315,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django server.myset" />
+      <item itemvalue="Python.tests" />
+      <item itemvalue="Python.views" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.tests" />
@@ -371,11 +346,12 @@
       <workItem from="1547257065255" duration="2432000" />
       <workItem from="1547260180870" duration="786000" />
       <workItem from="1547306162497" duration="1801000" />
+      <workItem from="1547458725933" duration="4781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59564000" />
+    <option name="totallyTimeSpent" value="64345000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,15 +363,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="834" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27753934" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20735608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32884097" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49713877" weight="0.38409704" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49713877" visible="true" weight="0.38394794" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -404,14 +380,14 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49642345" visible="true" weight="0.32884097" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49642345" weight="0.2494577" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5035765" side_tool="true" weight="0.32884097" />
-      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.49946696" weight="0.32884097" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.49946696" weight="0.3286334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32995737" />
-      <window_info anchor="right" id="Database" order="4" weight="0.15808298" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.15778251" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,16 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myset/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="e#629#661#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/odered.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -503,9 +469,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4328862-d438-4f5f-9674-0fcae45232d4/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f4328862-d438-4f5f-9674-0fcae45232d4/console.sql" />
     <entry file="file://$PROJECT_DIR$/templates/template_demo_2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -539,27 +503,9 @@
     </entry>
     <entry file="das://4109dc46-1f00-4727-bcd6-8b484f74f513/schema/main/table/weixin_user" />
     <entry file="file:///private/var/folders/1k/tnnzwdkx3z701ftk3c1m0bmc0000gn/T/pip-install-qjjdmrpw/mysqlclient/setup_posix.py" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2da591d8-2cce-41d8-9c6b-a785a503f46a/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2da591d8-2cce-41d8-9c6b-a785a503f46a/console.sql" />
     <entry file="file:///private/var/folders/1k/tnnzwdkx3z701ftk3c1m0bmc0000gn/T/pip-install-iu3q2cfx/mysqlclient/setup_posix.py" />
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/backends/mysql/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#629#661#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/backends/mysql/base.py" />
     <entry file="file://$PROJECT_DIR$/templates/template_demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1368">
@@ -567,13 +513,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/views.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f304a1d-b39b-4bba-9869-5ce889e589b3/console.sql" />
+    <entry file="file://$PROJECT_DIR$/weixin/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1786">
-          <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+        <state relative-caret-position="95">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
-            <element signature="e#0#76#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5bce4e05-c418-45de-9379-b29e8e61350f/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://7f304a1d-b39b-4bba-9869-5ce889e589b3/schema/permission/table/role_permission">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -584,6 +541,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#1#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myset/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/weixin/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -591,50 +567,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/tests.py">
+    <entry file="file://$PROJECT_DIR$/myset/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        <state relative-caret-position="371">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="26" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#629#661#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/admin.py">
+    <entry file="file://$PROJECT_DIR$/weixin/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="233">
+          <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#629#661#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="161" column="9" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://7f304a1d-b39b-4bba-9869-5ce889e589b3/schema/permission/table/weixin_author">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myset/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1494">
-          <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+        <state relative-caret-position="457">
+          <caret line="87" column="31" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myset/__init__.py">
+    <entry file="file://$PROJECT_DIR$/weixin/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="14" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7f304a1d-b39b-4bba-9869-5ce889e589b3/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="461">
+          <caret line="107" column="45" lean-forward="true" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -101,3 +101,10 @@ def testsqlite(request):
     dt=models.user.objects.filter(name="zhangsan")
     return HttpResponse(dt.values())
 
+
+def book(request):
+    #models.Author.objects.create(name="gongnanxiong",emali="18151143059163com")
+    a=models.Author.objects.all()
+    print(a.filter(name="gongnanxiong").name)
+    return HttpResponse("ddd")
+

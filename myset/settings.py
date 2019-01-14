@@ -85,6 +85,7 @@ DATABASES = {
         'PASSWORD': 'Yuhan235',
         'HOST': '47.98.117.129',
         'PORT': '3306',
+        'ATOMIC_REQUEST': True,
     }
 }
 
