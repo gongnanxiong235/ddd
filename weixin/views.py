@@ -1,7 +1,6 @@
 from django.shortcuts import render,HttpResponse,render_to_response,redirect
 from weixin import models
 import datetime
-import datetime
 # Create your views here.
 def test(request):
 
@@ -88,3 +87,17 @@ def shop(request):
 def li(request):
     objects=[11,22,33]
     return render(request,"li.html",locals())
+
+def testsqlite(request):
+    dict={"name":"zhangsan"}
+    dict["sex"]=1
+    dict["birthday"]=datetime.date(1986,3,30)
+    dict["salary"]=1.0
+    dict["emali"]='18151143059@163.com'
+    dict["login_ip"]="127.0.0.121"
+    dict["create_time"]=datetime.datetime.now()
+    dict["update_time"]=datetime.datetime.now()
+    models.user.objects.create(**dict)
+    dt=models.user.objects.filter(name="zhangsan")
+    return HttpResponse(dt.values())
+

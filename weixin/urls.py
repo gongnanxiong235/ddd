@@ -28,6 +28,7 @@ urlpatterns = [
     path('order/',views.order),
     path('li/',views.li),
     path('shopping/',views.shop),
+    path('sqlite',views.testsqlite),
     #别名
     path('login/',views.login,name="gongnanxiong"),
     path('alex',views.alex,{"name":"alex"}),
