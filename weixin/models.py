@@ -161,21 +161,22 @@ class Author(models.Model):
     name=models.CharField(max_length=255)
     emali=models.EmailField()
 
+
 class Book(models.Model):
     name=models.CharField(max_length=255)
     type=models.IntegerField()
-    author=models.ForeignKey(Author,on_delete=models.CASCADE)
+    author=models.ManyToManyField('Author')
+    publish=models.ForeignKey('Publish',on_delete=models.CASCADE,blank=True)
 
 
-class Entry(models.Model):
-    book = models.ForeignKey("Book",on_delete=models.CASCADE)
-    headline = models.CharField(max_length=255)
-    body_text = models.TextField()
-    pub_date = models.DateField()
-    mod_date = models.DateField()
-    authors = models.ManyToManyField("Author")
-    n_comments = models.IntegerField()
-    n_pingbacks = models.IntegerField()
-    rating = models.IntegerField()
-    def __unicode__(self):  # __str__ on Python 3
-        return self.headline
+
+class Publish(models.Model):
+    name=models.CharField(max_length=64)
+    city=models.CharField(max_length=64)
+
+
+class Hello(models.Model):
+    name=models.CharField(max_length=32)
+
+class Mytest(models.Model):
+    name = models.CharField(max_length=32)
