@@ -80,14 +80,11 @@ WSGI_APPLICATION = 'myset.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME' : 'permission',
-        'USER': 'root',
-        'PASSWORD': 'Yuhan235',
-        'HOST': '47.98.117.129',
+        'NAME' : 'shandjjdb',
+        'USER': 'gongnanxiong',
+        'PASSWORD': 'Yuhan@235',
+        'HOST': '192.168.30.122',
         'PORT': '3306',
-        'CHARSET':'utf8',
-        'COLLATION':'utf8_general_ci',
         'OPTIONS':{
             'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
             'charset':'utf8mb4',
@@ -110,13 +107,16 @@ DATABASES = {
         },
         'ATOMIC_REQUEST': True,
     },
-    'shandjj': {
+    'permission': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME' : 'shandjjdb',
-        'USER': 'gongnanxiong',
-        'PASSWORD': 'Yuhan@235',
-        'HOST': '192.168.30.122',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME' : 'permission',
+        'USER': 'root',
+        'PASSWORD': 'Yuhan235',
+        'HOST': '47.98.117.129',
         'PORT': '3306',
+        'CHARSET':'utf8',
+        'COLLATION':'utf8_general_ci',
         'OPTIONS':{
             'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
             'charset':'utf8mb4',
@@ -219,3 +219,26 @@ STATIC_URL = '/abc/'
 STATICFILES_DIRS=(
     os.path.join(BASE_DIR,"statics"),
 )
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '[%(asctime)s] %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}

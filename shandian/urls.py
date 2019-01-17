@@ -20,6 +20,7 @@ from shandian import views
 urlpatterns = [
     re_path(r'database/([0-9 a-z A-Z]*)/',views.database),
     re_path(r'sms/([0-9]*)/',views.sms),
+    re_path(r'old2new/([0-9]*)/',views.old2new),
 
 
 ]

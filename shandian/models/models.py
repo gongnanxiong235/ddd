@@ -1322,7 +1322,7 @@ class CbdBuyUserSendCopy(models.Model):
 
 
 class CbdCallRecord(models.Model):
-    id = models.PositiveIntegerField()
+    id = models.PositiveIntegerField(primary_key=True)
     unique_id = models.CharField(max_length=29)
     hotline = models.PositiveIntegerField()
     number_trunk = models.PositiveIntegerField()
@@ -1330,15 +1330,15 @@ class CbdCallRecord(models.Model):
     customer_number_type = models.PositiveIntegerField()
     customer_area_code = models.CharField(max_length=4)
     customer_province = models.CharField(max_length=9)
-    customer_crm_id = models.CharField()
+    customer_crm_id = models.CharField(max_length=255)
     customer_city = models.CharField(max_length=21)
     customer_vip = models.PositiveIntegerField()
     client_number = models.CharField(max_length=11)
     client_area_code = models.CharField(max_length=3)
     client_name = models.CharField(max_length=9)
-    client_crm_id = models.CharField()
+    client_crm_id = models.CharField(max_length=255)
     cno = models.CharField(max_length=4)
-    exten = models.CharField()
+    exten = models.CharField(max_length=255)
     start_time = models.PositiveIntegerField()
     answer_time = models.PositiveIntegerField()
     join_queue_time = models.PositiveIntegerField()
@@ -1354,17 +1354,17 @@ class CbdCallRecord(models.Model):
     queue_name = models.CharField(max_length=11)
     record_file = models.CharField(max_length=91)
     score = models.PositiveIntegerField()
-    score_comment = models.CharField()
+    score_comment = models.CharField(max_length=255)
     in_case_lib = models.PositiveIntegerField()
     call_type = models.PositiveIntegerField()
     status = models.PositiveIntegerField()
     mark = models.PositiveIntegerField()
-    mark_data = models.CharField()
+    mark_data = models.CharField(max_length=255)
     end_reason = models.PositiveSmallIntegerField()
     gw_ip = models.CharField(max_length=11)
     processed = models.PositiveIntegerField()
-    process_comment = models.CharField(blank=True, null=True)
-    user_field = models.CharField()
+    process_comment = models.CharField(max_length=255,blank=True, null=True)
+    user_field = models.CharField(max_length=255)
     sip_cause = models.PositiveIntegerField()
     asr_duration = models.PositiveIntegerField()
     asr_cost = models.DecimalField(max_digits=6, decimal_places=3)
@@ -5751,16 +5751,7 @@ class CbdSaleMember(models.Model):
         db_table = 'cbd_sale_member'
 
 
-class CbdScene(models.Model):
-    id = models.IntegerField(blank=True, null=True)
-    goods_scene = models.CharField(max_length=150, blank=True, null=True)
-    scene_id = models.IntegerField(blank=True, null=True)
-    scene_state = models.IntegerField(blank=True, null=True)
-    create_time = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'cbd_scene'
 
 
 class CbdSearch(models.Model):
@@ -8403,3 +8394,18 @@ class WdWord(models.Model):
     class Meta:
         managed = False
         db_table = 'wd_word'
+
+
+class CbdUserAccessToken(models.Model):
+    user_id = models.BigIntegerField()
+    dev_id = models.CharField(max_length=60)
+    os = models.CharField(max_length=10, blank=True, null=True)
+    token = models.CharField(max_length=16)
+    app_resource = models.IntegerField()
+    last_update = models.PositiveIntegerField()
+    add_time = models.PositiveIntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'cbd_user_access_token'
+        unique_together = (('user_id', 'dev_id', 'app_resource'),)
