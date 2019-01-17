@@ -86,9 +86,10 @@ DATABASES = {
         'HOST': '192.168.30.122',
         'PORT': '3306',
         'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'init_command':"SET sql_mode='traditional'",
             'charset':'utf8mb4',
         },
+
         'ATOMIC_REQUEST': True,
     },
     'mytest': {
@@ -102,7 +103,7 @@ DATABASES = {
         'CHARSET':'utf8',
         'COLLATION':'utf8_general_ci',
         'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'init_command':"SET sql_mode='traditional'",
             'charset':'utf8mb4',
         },
         'ATOMIC_REQUEST': True,
@@ -118,7 +119,7 @@ DATABASES = {
         'CHARSET':'utf8',
         'COLLATION':'utf8_general_ci',
         'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'init_command':"SET sql_mode='traditional'",
             'charset':'utf8mb4',
         },
         'ATOMIC_REQUEST': True,
@@ -131,7 +132,7 @@ DATABASES = {
         'HOST': '192.168.30.122',
         'PORT': '3306',
         'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'init_command':"SET sql_mode='traditional'",
             'charset':'utf8mb4',
         },
         'ATOMIC_REQUEST': True,
@@ -144,7 +145,7 @@ DATABASES = {
         'HOST': '192.168.30.122',
         'PORT': '3306',
         'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'init_command':"SET sql_mode='traditional'",
             'charset':'utf8mb4',
         },
         'ATOMIC_REQUEST': True,
@@ -157,7 +158,7 @@ DATABASES = {
         'HOST': '192.168.30.122',
         'PORT': '3306',
         'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'init_command':"SET sql_mode='traditional'",
             'charset':'utf8mb4',
         },
         'ATOMIC_REQUEST': True,
@@ -170,7 +171,7 @@ DATABASES = {
         'HOST': '192.168.30.122',
         'PORT': '3306',
         'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'init_command':"SET sql_mode='traditional'",
             'charset':'utf8mb4',
         },
         'ATOMIC_REQUEST': True,
@@ -220,25 +221,25 @@ STATICFILES_DIRS=(
     os.path.join(BASE_DIR,"statics"),
 )
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'simple': {
-            'format': '[%(asctime)s] %(message)s'
-        },
-    },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple'
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'simple': {
+#             'format': '[%(asctime)s] %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'simple'
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',
+#         },
+#     },
+# }

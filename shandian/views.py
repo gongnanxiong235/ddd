@@ -15,8 +15,8 @@ def sms(req,mobile):
     if not res:
         return HttpResponse("输入的手机号码不合法")
     else:
-        models.CbdSms.objects.using('sms').filter(tel=mobile).delete()
-        models.CbdSms.objects.using('sms').create(tel=mobile, code='1234', createtime=time.time(), operate=35, is_send=1, sendtime=time.time(), app_resource=0)
+        models_sms.CbdSms.objects.using('sms').filter(tel=mobile).delete()
+        models_sms.CbdSms.objects.using('sms').create(tel=mobile, code='1234', createtime=time.time(), operate=35, is_send=1, sendtime=time.time(), app_resource=0)
         return HttpResponse('send message ok')
 
 
