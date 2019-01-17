@@ -129,9 +129,9 @@ def getDatabase(user_id):
     flexihash=Flexihash()
     flexihash.addTargets(['DB_CONFIG_TAOJJ_1','DB_CONFIG_TAOJJ_2','DB_CONFIG_TAOJJ_3'])
     db=flexihash.lookup(user_id)
-    if db==DB_CONFIG_TAOJJ_1:
+    if db=='DB_CONFIG_TAOJJ_1':
         return 'db1'
-    if db==DB_CONFIG_TAOJJ_2:
+    if db=='DB_CONFIG_TAOJJ_2':
         return 'db2'
-    if db==DB_CONFIG_TAOJJ_3:
+    if db=='DB_CONFIG_TAOJJ_3':
         return 'db3'
