@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse,render_to_response,redirect
-from weixin import models
+from weixin.models import models_mytest
 import datetime
 # Create your views here.
 def test(request):
@@ -15,8 +15,8 @@ def userInfo(request):
     sex=request.POST.get("sex",None)
     email=request.POST.get("email",None)
     user={"name":name,"sex":sex,"email":email}
-    models.userInfo.objects.create(name=name,sex=sex,email=email)
-    userList=models.userInfo.objects.all()
+    models_mytest.userInfo.objects.create(name=name, sex=sex, email=email)
+    userList= models_mytest.userInfo.objects.all()
     #return render(request,"index.html",{"user_list":userList})
     return render(request, "index.html", locals())
 
@@ -97,14 +97,14 @@ def testsqlite(request):
     dict["login_ip"]="127.0.0.121"
     dict["create_time"]=datetime.datetime.now()
     dict["update_time"]=datetime.datetime.now()
-    models.user.objects.create(**dict)
-    dt=models.user.objects.filter(name="zhangsan")
+    models_mytest.user.objects.create(**dict)
+    dt= models_mytest.user.objects.filter(name="zhangsan")
     return HttpResponse(dt.values())
 
 
 def book(request):
     #models.Author.objects.create(name="gongnanxiong",emali="18151143059163com")
-    a=models.Author.objects.all()
+    a= models_mytest.Author.objects.all()
     print(a.filter(name="gongnanxiong").name)
     return HttpResponse("ddd")
 

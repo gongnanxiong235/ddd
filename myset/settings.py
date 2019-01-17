@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'weixin.apps.WeixinConfig',
+    'shandian.apps.ShandianConfig',
 
 ]
 
@@ -92,8 +93,89 @@ DATABASES = {
             'charset':'utf8mb4',
         },
         'ATOMIC_REQUEST': True,
+    },
+    'mytest': {
+        'ENGINE': 'django.db.backends.mysql',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME' : 'mytest',
+        'USER': 'root',
+        'PASSWORD': 'Yuhan235',
+        'HOST': '47.98.117.129',
+        'PORT': '3306',
+        'CHARSET':'utf8',
+        'COLLATION':'utf8_general_ci',
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset':'utf8mb4',
+        },
+        'ATOMIC_REQUEST': True,
+    },
+    'shandjj': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' : 'shandjjdb',
+        'USER': 'gongnanxiong',
+        'PASSWORD': 'Yuhan@235',
+        'HOST': '192.168.30.122',
+        'PORT': '3306',
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset':'utf8mb4',
+        },
+        'ATOMIC_REQUEST': True,
+    },
+    'sms': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' : 'cbdsms_db',
+        'USER': 'gongnanxiong',
+        'PASSWORD': 'Yuhan@235',
+        'HOST': '192.168.30.122',
+        'PORT': '3306',
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset':'utf8mb4',
+        },
+        'ATOMIC_REQUEST': True,
+    },
+    'db1': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' : 'db1',
+        'USER': 'gongnanxiong',
+        'PASSWORD': 'Yuhan@235',
+        'HOST': '192.168.30.122',
+        'PORT': '3306',
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset':'utf8mb4',
+        },
+        'ATOMIC_REQUEST': True,
+    },
+    'db2': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' : 'db2',
+        'USER': 'gongnanxiong',
+        'PASSWORD': 'Yuhan@235',
+        'HOST': '192.168.30.122',
+        'PORT': '3306',
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset':'utf8mb4',
+        },
+        'ATOMIC_REQUEST': True,
+    },
+    'db3': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' : 'db3',
+        'USER': 'gongnanxiong',
+        'PASSWORD': 'Yuhan@235',
+        'HOST': '192.168.30.122',
+        'PORT': '3306',
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset':'utf8mb4',
+        },
+        'ATOMIC_REQUEST': True,
+    },
 
-    }
 }
 
 

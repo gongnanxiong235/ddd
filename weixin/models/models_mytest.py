@@ -8,6 +8,16 @@
 from django.db import models
 
 
+class Access(models.Model):
+    site_id = models.IntegerField()
+    count = models.IntegerField(blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'access'
+
+
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
 
@@ -118,65 +128,12 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
-class Permission(models.Model):
-    caption = models.CharField(max_length=255)
-    fun = models.CharField(max_length=255, blank=True, null=True)
-    module = models.CharField(max_length=255, blank=True, null=True)
+class Websites(models.Model):
+    name = models.CharField(max_length=256, blank=True, null=True)
+    url = models.CharField(max_length=256, blank=True, null=True)
+    alexa = models.IntegerField()
+    country = models.CharField(max_length=32, blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'permission'
-
-
-class Role(models.Model):
-    name = models.CharField(max_length=255, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'role'
-
-
-class RolePermission(models.Model):
-    role_id = models.IntegerField()
-    permission_id = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'role_permission'
-
-
-class User(models.Model):
-    username = models.CharField(unique=True, max_length=255)
-    password = models.CharField(max_length=255, blank=True, null=True)
-    full_name = models.CharField(max_length=100)
-    age = models.IntegerField(blank=True, null=True)
-    gender = models.IntegerField(blank=True, null=True)
-    role_id = models.IntegerField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'user'
-
-class Author(models.Model):
-    name=models.CharField(max_length=255)
-    emali=models.EmailField()
-
-
-class Book(models.Model):
-    name=models.CharField(max_length=255)
-    type=models.IntegerField()
-    author=models.ManyToManyField('Author')
-    publish=models.ForeignKey('Publish',on_delete=models.CASCADE,blank=True)
-
-
-
-class Publish(models.Model):
-    name=models.CharField(max_length=64)
-    city=models.CharField(max_length=64)
-
-
-class Hello(models.Model):
-    name=models.CharField(max_length=32)
-
-class Mytest(models.Model):
-    name = models.CharField(max_length=32)
+        db_table = 'websites'
