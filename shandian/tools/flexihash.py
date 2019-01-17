@@ -127,5 +127,5 @@ class Flexihash(object):
 
 def getDatabase(user_id):
     flexihash=Flexihash()
-    flexihash.addTargets(['db1','db2','db3'])
+    flexihash.addTargets(['DB_CONFIG_TAOJJ_1','DB_CONFIG_TAOJJ_2','DB_CONFIG_TAOJJ_3'])
     return flexihash.lookup(user_id)
