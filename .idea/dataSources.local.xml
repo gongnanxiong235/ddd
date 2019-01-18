@@ -31,5 +31,38 @@
       <user-name>root</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="Django db2" uuid="1eae6039-b45a-4816-bf23-0bc7294792d8">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>gongnanxiong</user-name>
+    </data-source>
+    <data-source name="Django default" uuid="594fc5e7-d301-47de-9a2d-0d19e6c315fd">
+      <database-info product="MySQL" version="5.7.24-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MYSQL" exact-version="5.7.24">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <user-name>gongnanxiong</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
+    <data-source name="Django permission" uuid="30b9ada6-99d9-4ded-b721-83a5540679cc">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="Django mytest" uuid="691c41f4-de99-4ebb-9015-5f2ea5c52b61">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="Django db1" uuid="c4994dbf-17c3-4e9e-9e59-d62dd7bf4467">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>gongnanxiong</user-name>
+    </data-source>
+    <data-source name="Django db3" uuid="1421e368-0712-4ffe-8db3-2bf047abb99c">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>gongnanxiong</user-name>
+    </data-source>
+    <data-source name="Django sms" uuid="858ff43d-fdfc-4246-b31d-9093ee426d36">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>gongnanxiong</user-name>
+    </data-source>
   </component>
 </project>

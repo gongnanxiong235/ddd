@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'weixin.apps.WeixinConfig',
     'shandian.apps.ShandianConfig',
+    'qq.apps.QqConfig',
 
 ]
 
@@ -179,6 +180,13 @@ DATABASES = {
 
 }
 
+DATABASE_APPS_MAPPING = {
+    # example:
+    # 'app_name':'database_name',
+    'qq': 'mytest',
+
+}
+DATABASE_ROUTERS = ['myset.database_router.DatabaseAppsRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

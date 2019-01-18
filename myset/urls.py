@@ -20,6 +20,6 @@ from weixin import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("weixin/",include("weixin.urls")),
-    path('shandian/',include('shandian.urls'))
-
+    path('shandian/',include('shandian.urls')),
+    path('qq/',include('qq.urls')),
 ]
