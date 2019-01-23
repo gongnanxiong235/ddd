@@ -1,0 +1,6 @@
+{% extends "shandianjj/index.html" %}
+{% block content %}
+    <form>
+        <h4>USERID:<input type="text" id="lv_user" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,'');}).call(this)" onblur="this.v();"> &nbsp;&nbsp;风险等级值:<input type="text" id="lv_level" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,'');}).call(this)" onblur="this.v();">&nbsp;<input type="button" value="更新风险等级" id="lv_bt"></h4>
+    </form>
+{% endblock %}

@@ -38,6 +38,7 @@ def alex(request,name):
     return HttpResponse(name)
 
 def login(request):
+
     if request.method=="POST":
         username=request.POST.get("username",None)
         password=request.POST.get("password",None)

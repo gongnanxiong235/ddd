@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Courier New";
+        }
+        .native-out{
+            width: 100%;
+            line-height: 44px;
+            {#position: fixed;#}
+            top: 0;
+            left: 0;
+            background-color: gainsboro;
+        }
+        .content-out{
+
+            width: 100%;
+            height: 1100px;
+            background-color: gainsboro;
+        }
+        .native-inner{
+            width: 1216px;
+            line-height: 44px;
+            margin: 0 auto;
+            background-color:cornflowerblue;
+            {#border: blueviolet solid 1px;#}
+        }
+        .content_inner{
+            width: 1216px;
+            height: 1100px;
+            margin: 0 auto;
+            background-color: white;
+
+        }
+        .body-menu{
+            float: left;
+            height: 1100px;
+            width: 10%;
+            background: rosybrown;
+        }
+        .body-content{
+            float: left;
+            height: 1100px;
+            width: 90%;
+        }
+
+    </style>
+    <script src="../../statics/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="native-out">
+        <div class="native-inner">淘集集-测试family
+{#            <h1>淘集集-测试family</h1>#}
+        </div>
+    </div>
+    <div class="content-out">
+        <div class="content_inner">
+            <div class="body-menu">
+                <p><a href="/shandian/sendsms">发送短信</a></p>
+                <p><a href="/shandian/database">获取分库</a></p>
+                <p><a href="/shandian/old2new">老户2新户</a></p>
+                <p><a href="/shandian/setlevel">微信风险等级</a></p>
+            </div>
+            <div class="body-content">
+                {% block content %}
+                    <form>
+                        <h4>Mobile:<input type="text" id="mobile"> <input type="button" value="点我发送短信" id="sms"></h4>
+                    </form>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $('#sms').click(function () {
+        $.post("/shandian/sendsms/",
+            {
+                mobile:$('#mobile').val(),
+
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("发送短信失败，请联系管理员")
+                }
+
+        })
+    })
+    $("#bt").click(function () {
+        $.post("/shandian/database/",
+            {
+                user_id:$("#mb").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("获取分库信息失败，请联系管理员")
+                }
+            }
+        )
+    })
+
+    $("#oldbt").click(function () {
+        $.post("/shandian/old2new",
+            {
+                user_id:$("#olduser").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("删除数据库失败，请联系管理员")
+                }
+            }
+        )
+    })
+    $("#lv_bt").click(function () {
+        $.post("/shandian/setlevel",
+            {
+                user_id:$("#lv_user").val(),
+                level:$("#lv_level").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("删除数据库失败，请联系管理员")
+                }
+            }
+        )
+    })
+</script>
+</html>

@@ -18,9 +18,12 @@ from django.urls import path,re_path
 from shandian import views
 
 urlpatterns = [
-    re_path(r'database/([0-9 a-z A-Z]*)/',views.database),
-    re_path(r'sms/([0-9]*)/',views.sms),
-    re_path(r'old2new/([0-9]*)/',views.old2new),
-
-
+    # re_path(r'database/([0-9 a-z A-Z]*)/',views.database),
+    # re_path(r'sms/([0-9]*)/',views.sms),
+    # re_path(r'old2new/([0-9]*)/',views.old2new),
+    path('index/',views.index),
+    path('database/',views.database),
+    path('sendsms/', views.sendSms),
+    path('old2new',views.old2new),
+    path('setlevel',views.setWXUsertLevel),
 ]

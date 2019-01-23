@@ -7,7 +7,9 @@
     <script>
     $(function () {
         $('.hide').click(function () {
-            $('p').hide("slow")
+            $('p').hide("slow" ,function () {
+                alert("the content is hide")
+            })
         })
         $('.show').click(function () {
             $('p').show()
