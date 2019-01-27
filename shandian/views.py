@@ -6,6 +6,27 @@ import time
 
 # Create your views here.
 
+def tonew(user_id):
+    # cbd_users
+    models.CbdUsers.objects.filter(user_id=user_id).delete()
+    models.CbdUsers.objects.using(flexihash.getDatabase(user_id)).filter(user_id=user_id).delete()
+    # cbd_wx_users
+    models.CbdWxUsers.objects.filter(user_id=user_id).delete()
+    models.CbdWxUsers.objects.using(flexihash.getDatabase(user_id)).filter(user_id=user_id).delete()
+    # cbd_user_access_token 只有分库有
+    models.CbdUserAccessToken.objects.using(flexihash.getDatabase(user_id)).filter(user_id=user_id).delete()
+    # cbd_order  分库 公共库
+    models.CbdOrder.objects.filter(user_id=user_id).delete()
+    models.CbdOrder.objects.using(flexihash.getDatabase(user_id)).filter(user_id=user_id).delete()
+    # cbd_boost_balance
+    models.CbdBoostBalance.objects.filter(user_id=user_id).delete()
+    # cbd_boost_balance_change_log
+    models.CbdBoostBalanceChangeLog.objects.filter(user_id=user_id).delete()
+    # cbd_earn_user_reg
+    models.CbdEarnUserReg.objects.filter(user_id=user_id).delete()
+    # cbd_earn_account
+    models.CbdEarnAccount.objects.filter(user_id=user_id).delete()
+
 def index(request):
     return render(request, "shandianjj/index.html")
 
@@ -36,28 +57,31 @@ def sendSms(request):
 def old2new(request):
     if request.method=='POST':
         user_id=request.POST.get("user_id")
-        #cbd_users
-        models.CbdUsers.objects.filter(user_id=user_id).delete()
-        models.CbdUsers.objects.using(flexihash.getDatabase(user_id)).filter(user_id=user_id).delete()
-        #cbd_wx_users
-        models.CbdWxUsers.objects.filter(user_id=user_id).delete()
-        models.CbdWxUsers.objects.using(flexihash.getDatabase(user_id)).filter(user_id=user_id).delete()
-        #cbd_user_access_token 只有分库有
-        models.CbdUserAccessToken.objects.using(flexihash.getDatabase(user_id)).filter(user_id=user_id).delete()
-        #cbd_order  分库 公共库
-        models.CbdOrder.objects.filter(user_id=user_id).delete()
-        models.CbdOrder.objects.using(flexihash.getDatabase(user_id)).filter(user_id=user_id).delete()
-        #cbd_boost_balance
-        models.CbdBoostBalance.objects.filter(user_id=user_id).delete()
-        #cbd_boost_balance_change_log
-        models.CbdBoostBalanceChangeLog.objects.filter(user_id=user_id).delete()
-        #cbd_earn_user_reg
-        models.CbdEarnUserReg.objects.filter(user_id=user_id).delete()
-        #cbd_earn_account
-        models.CbdEarnAccount.objects.filter(user_id=user_id).delete()
+        if len(user_id)==0:
+            return HttpResponse("请输入user_id")
+        if len(user_id)!=17:
+            return HttpResponse("输入的user_id不合法,user_id是17位数字组成,请重新输入")
+        tonew(user_id)
         return HttpResponse("ok")
     else:
         return render(request, 'shandianjj/old2new.html')
+
+def old2new_mobile(request):
+    if request.method=='POST':
+        mobile=request.POST.get("mobile")
+        res = re.phone(str(mobile).strip())
+        if res:
+            flag=models.CbdUsers.objects.filter(user_name=mobile).exists()
+            if flag:
+                user_id=str(models.CbdUsers.objects.filter(user_name=mobile)[0].user_id)
+                tonew(user_id)
+                return HttpResponse("ok")
+            else:
+                return HttpResponse("此手机号码在数据库中不存在，请检查是否正确")
+        else:
+            return HttpResponse("手机号码格式不正确，请检查输入是否正确")
+    else:
+        return HttpResponse("erro,the methed must be post method")
 
 def setWXUsertLevel(request):
     if request.method=="POST":

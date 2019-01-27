@@ -129,6 +129,24 @@
             }
         )
     })
+
+    $("#oldbt_mobile").click(function () {
+        $.post("/shandian/old2new_mobile",
+            {
+                mobile:$("#olduser_mobile").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("删除数据库失败，请联系管理员")
+                }
+            }
+        )
+    })
     $("#lv_bt").click(function () {
         $.post("/shandian/setlevel",
             {
