@@ -29,4 +29,7 @@ urlpatterns = [
     path('old2new_mobile/',views.old2new_mobile),
     path('amount/',views.currentAmount),
     path('amount_show/',views.amount_show),
+
+    path('count/',views.money_count),
+    path('count_show/',views.money_count_show),
 ]

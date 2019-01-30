@@ -118,7 +118,7 @@ def setWXUsertLevel(request):
 def currentAmount(request):
     conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
     day=str(date.today()).replace('-','')
-    key='boost/transfersubmit/%s/amount_key/%s'
+    key='/boost/transfersubmit/%s/amount_key/%s'
     if request.method=='POST':
         user_id=request.POST.get("user_id")
         amount=request.POST.get('amount')
@@ -136,7 +136,7 @@ def currentAmount(request):
 def amount_show(request):
     conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
     day=str ( date.today () ).replace ( '-', '' )
-    key='boost/transfersubmit/%s/amount_key/%s'
+    key='/boost/transfersubmit/%s/amount_key/%s'
     if request.method=='POST':
         user_id=request.POST.get("user_id")
         if not user_id:
@@ -147,3 +147,35 @@ def amount_show(request):
     else:
         return render(request,'shandianjj/amount.html')
 
+
+def money_count(request):
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str ( date.today () ).replace ( '-', '' )
+    key='/boost/transfersubmit/%s/num_key/%s'
+    if request.method == 'POST':
+        user_id=request.POST.get ( "user_id" )
+        count=request.POST.get ( 'count' )
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        if not count:
+            return HttpResponse ( "请输入次数" )
+        else:
+            a=conn.set ( key % (day, user_id), count )
+            return HttpResponse ( "ok" )
+    else:
+        return render ( request, 'shandianjj/amount.html' )
+
+def money_count_show(request):
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str ( date.today () ).replace ( '-', '' )
+    key='/boost/transfersubmit/%s/num_key/%s'
+    if request.method == 'POST':
+        user_id=request.POST.get ( "user_id" )
+        count=request.POST.get ( 'count' )
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        else:
+            a=conn.get ( key % (day, user_id))
+            return HttpResponse ( str(a) )
+    else:
+        return render ( request, 'shandianjj/amount.html' )
