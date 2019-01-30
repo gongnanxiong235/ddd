@@ -209,7 +209,7 @@ AUTH_PASSWORD_VALIDATORS = [
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://192.168.30.130:6379/db0",
+        "LOCATION": "redis://192.168.30.130:6379/0",
         "OPTIONS": {
            "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }

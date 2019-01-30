@@ -4,6 +4,8 @@ from shandian.tools import flexihash,re
 from shandian.models import models,models_sms,models_mongo
 import time
 from django.core.cache import cache
+from django_redis import get_redis_connection
+from datetime import date
 
 # Create your views here.
 
@@ -114,7 +116,14 @@ def setWXUsertLevel(request):
         return render(request, 'shandianjj/setlevel.html')
 
 def currentAmount(request):
-    a=cache.get('boost/transfersubmit/20190130/amount_key/68830274326559136')
-    print(a)
-    return HttpResponse(a)
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str(date.today()).replace('-','')
+    key='boost/transfersubmit/%s/amount_key/%s'
+    if request.method=='POST':
+        user_id=request.POST.get("user_id")
+        amount=request.POST.get('amount')
+        a=conn.set ( key %(day,user_id) ,amount)
+        return HttpResponse("ok")
+    else:
+        return render(request,'shandianjj/amount.html')
 
