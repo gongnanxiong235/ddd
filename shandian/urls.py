@@ -32,4 +32,7 @@ urlpatterns = [
 
     path('count/',views.money_count),
     path('count_show/',views.money_count_show),
+
+    path('max/',views.max),
+    path('max_show/',views.max_show),
 ]
