@@ -206,7 +206,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://192.168.30.130:6379/db0",
+        "OPTIONS": {
+           "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 

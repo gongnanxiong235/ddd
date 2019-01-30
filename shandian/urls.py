@@ -24,7 +24,8 @@ urlpatterns = [
     path('index/',views.index),
     path('database/',views.database),
     path('sendsms/', views.sendSms),
-    path('old2new',views.old2new),
-    path('setlevel',views.setWXUsertLevel),
-    path('old2new_mobile',views.old2new_mobile)
+    path('old2new/',views.old2new),
+    path('setlevel/',views.setWXUsertLevel),
+    path('old2new_mobile/',views.old2new_mobile),
+    path('amount/',views.currentAmount)
 ]

@@ -3,6 +3,7 @@ from shandian.tools import flexihash,re
 #from shandian.models.models_sms import CbdSms
 from shandian.models import models,models_sms,models_mongo
 import time
+from django.core.cache import cache
 
 # Create your views here.
 
@@ -112,4 +113,8 @@ def setWXUsertLevel(request):
     else:
         return render(request, 'shandianjj/setlevel.html')
 
+def currentAmount(request):
+    a=cache.get('boost/transfersubmit/20190130/amount_key/68830274326559136')
+    print(a)
+    return HttpResponse(a)
 

@@ -7,6 +7,3 @@ class user_property(Document):
     def __str__(self):
         return str(self.qcloud_level)
 
-user=user_property.objects.filter(user_id="28881674599595039")[0]
-user.qcloud_level=10
-user.save()
