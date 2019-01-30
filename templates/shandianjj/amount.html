@@ -1,6 +1,6 @@
 {% extends "shandianjj/index.html" %}
 {% block content %}
     <form>
-        <h4>USERID:<input type="text" id="amount_user" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,'');}).call(this)" onblur="this.v();"> &nbsp;&nbsp;设置已提现金额:<input type="text" id="amount_value" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,'');}).call(this)" onblur="this.v();">&nbsp;<input type="button" value="更新已提现金额" id="amount_bt"></h4>
+        <h4>USERID:<input type="text" id="amount_user" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,'');}).call(this)" onblur="this.v();"> &nbsp;&nbsp;设置已提现金额:<input type="text" id="amount_value" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,'');}).call(this)" onblur="this.v();">&nbsp;<input type="button" value="更新已提现金额" id="amount_bt">&nbsp;<input type="button" value="查看当日已提现金额" id="amount_show_bt"></h4>
     </form>
 {% endblock %}

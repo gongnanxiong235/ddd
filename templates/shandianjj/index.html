@@ -185,5 +185,23 @@
             }
         )
     })
+
+    $("#amount_show_bt").click(function () {
+        $.post("/shandian/amount_show/",
+            {
+                user_id:$("#amount_user").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("更新失败，请联系管理员")
+                }
+            }
+        )
+    })
 </script>
 </html>

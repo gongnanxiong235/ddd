@@ -122,8 +122,28 @@ def currentAmount(request):
     if request.method=='POST':
         user_id=request.POST.get("user_id")
         amount=request.POST.get('amount')
-        a=conn.set ( key %(day,user_id) ,amount)
-        return HttpResponse("ok")
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        if not amount:
+            return HttpResponse ( "请输入金额" )
+        else:
+            a=conn.set ( key %(day,user_id) ,amount)
+            return HttpResponse("ok")
+    else:
+        return render(request,'shandianjj/amount.html')
+
+
+def amount_show(request):
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str ( date.today () ).replace ( '-', '' )
+    key='boost/transfersubmit/%s/amount_key/%s'
+    if request.method=='POST':
+        user_id=request.POST.get("user_id")
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        else:
+            a=conn.get ( key %(day,user_id))
+            return HttpResponse(str(a))
     else:
         return render(request,'shandianjj/amount.html')
 
