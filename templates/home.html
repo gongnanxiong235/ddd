@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+     {% for item in hello %}
+        {#      如果不是for循环的最后 打印都好（forloop.last）   #}
+        {{ item }}{% if not forloop.last %},{% endif %}
+     {% endfor %}
+     <br/>
+     {% for key,value in hello_dict.items %}
+        <p>{{ key }}:{{ value }}</p>
+     {% endfor %}
+     path:{{ request.path }}
+     user:{{ request.user }}
+     params:{{ request.GET.urlencode }}
+
+</body>
+</html>

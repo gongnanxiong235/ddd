@@ -1,6 +1,8 @@
 from django.shortcuts import render,HttpResponse,render_to_response,redirect
 from weixin.models import models_mytest
+from weixin.form import BookForm
 import datetime
+from django import views
 # Create your views here.
 def test(request):
 
@@ -108,4 +110,49 @@ def book(request):
     a= models_mytest.Author.objects.all()
     print(a.filter(name="gongnanxiong").name)
     return HttpResponse("ddd")
+
+def add(request):
+    a=request.GET.get('a',0)
+    b=request.GET.get('b',0)
+    result=int(a)+int(b)
+    print(request.META)
+    return HttpResponse(str(result))
+
+
+def add2(request,a,b):
+    return HttpResponse(str(int(a)+int(b)))
+
+def home(request):
+    hello=map(str,range(100))
+    hello_dict=dict([('hello','world'),('my','name'),('haha','xixi')])
+    return render(request,'home.html',{'hello':hello,'hello_dict':hello_dict})
+
+
+class IndexView(views.View):
+    # 如果是GET请求，那么返回一个空的表单
+    def get(self, request):
+        form = BookForm()
+        return render(request, 'book.html', {'form': form})
+
+    # 如果是POST请求，那么将提交上来的数据进行校验
+    def post(self, request):
+        form = BookForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data.get('title')
+            page = form.cleaned_data.get('page')
+            price = form.cleaned_data.get('price')
+            print('=' * 30)
+            print(title)
+            print(page)
+            print(price)
+            print('=' * 30)
+            # 在验证完成后直接调用save方法，就可以将这个数据保存到数据库中了
+            form.save()
+
+            return HttpResponse('表单验证成功')
+        else:
+            # 点上get_json_data()它，打印的错误信息会以json方式显示
+            print(form.errors.get_json_data())
+            return HttpResponse('表单验证失败')
+
 

@@ -113,7 +113,7 @@
     })
 
     $("#oldbt").click(function () {
-        $.post("/shandian/old2new",
+        $.post("/shandian/old2new/",
             {
                 user_id:$("#olduser").val()
             },
@@ -131,7 +131,7 @@
     })
 
     $("#oldbt_mobile").click(function () {
-        $.post("/shandian/old2new_mobile",
+        $.post("/shandian/old2new_mobile/",
             {
                 mobile:$("#olduser_mobile").val()
             },
@@ -148,7 +148,7 @@
         )
     })
     $("#lv_bt").click(function () {
-        $.post("/shandian/setlevel",
+        $.post("/shandian/setlevel/",
             {
                 user_id:$("#lv_user").val(),
                 level:$("#lv_level").val()

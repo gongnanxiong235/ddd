@@ -30,6 +30,10 @@ urlpatterns = [
     path('shopping/',views.shop),
     path('sqlite',views.testsqlite),
     path('book/',views.book),
+    path('add/',views.add),
+    path('add2/<int:a>/<int:b>',views.add2),
+    path('home/',views.home),
+    path('getbook/',views.IndexView.as_view()),
     #别名
     path('login/',views.login,name="gongnanxiong"),
     path('alex',views.alex,{"name":"alex"}),

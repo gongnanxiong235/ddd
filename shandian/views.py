@@ -92,8 +92,8 @@ def setWXUsertLevel(request):
             return HttpResponse("请输入user_id")
         if len(level)==0:
             return HttpResponse("请输入level")
-        if len(user_id)!=17:
-            return HttpResponse("输入的user_id不合法,user_id是17位数字组成,请重新输入")
+        # if len(user_id)!=17:
+        #     return HttpResponse("输入的user_id不合法,user_id是17位数字组成,请重新输入")
         if len(level)!=1:
             return HttpResponse("输入的level值不合法，level值由一位数字组成")
         # if user_id==None or len(user_id.strip())!=17 or level==None or len(str(level).strip())!=1:
@@ -104,7 +104,10 @@ def setWXUsertLevel(request):
 
         qset=models_mongo.user_property.objects.filter(user_id=int(user_id))
         if len(qset)==0:
-            return HttpResponse("Mongodb中不存在此user_id,请确认输入是否正确")
+            print(11111)
+            # return HttpResponse("Mongodb中不存在此user_id,请确认输入是否正确")
+            models_mongo.user_property.objects.create(user_id=int(user_id),qcloud_level=int(level))
+            return HttpResponse("添加并更新用户等级成功")
         else:
             user=qset[0]
             user.qcloud_level=int(level)
