@@ -64,6 +64,7 @@
                 <p><a href="/shandian/database">获取分库</a></p>
                 <p><a href="/shandian/old2new">老户2新户</a></p>
                 <p><a href="/shandian/setlevel">微信风险等级</a></p>
+                <p><a href="/shandian/amount">阈值</a></p>
             </div>
             <div class="body-content">
                 {% block content %}
@@ -161,6 +162,118 @@
                 else
                 {
                     alert("删除数据库失败，请联系管理员")
+                }
+            }
+        )
+    })
+
+    $("#amount_bt").click(function () {
+        $.post("/shandian/amount/",
+            {
+                user_id:$("#amount_user").val(),
+                amount:$("#amount_value").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("更新失败，请联系管理员")
+                }
+            }
+        )
+    })
+
+    $("#amount_show_bt").click(function () {
+        $.post("/shandian/amount_show/",
+            {
+                user_id:$("#amount_user").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("更新失败，请联系管理员")
+                }
+            }
+        )
+    })
+
+    $("#count_bt").click(function () {
+        $.post("/shandian/count/",
+            {
+                user_id:$("#count_user").val(),
+                count:$("#count_value").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("更新失败，请联系管理员")
+                }
+            }
+        )
+    })
+
+    $("#count_show_bt").click(function () {
+        $.post("/shandian/count_show/",
+            {
+                user_id:$("#count_user").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("查询失败，请联系管理员")
+                }
+            }
+        )
+    })
+
+
+    $("#max_bt").click(function () {
+        $.post("/shandian/max/",
+            {
+                user_id:$("#max_user").val(),
+                max:$("#max_value").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("更新失败，请联系管理员")
+                }
+            }
+        )
+    })
+
+    $("#max_show_bt").click(function () {
+        $.post("/shandian/max_show/",
+            {
+                user_id:$("#max_user").val()
+            },
+            function (data,status) {
+                if(status=='success')
+                {
+                    alert(data)
+                }
+                else
+                {
+                    alert("查询失败，请联系管理员")
                 }
             }
         )

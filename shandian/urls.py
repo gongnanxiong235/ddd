@@ -27,5 +27,12 @@ urlpatterns = [
     path('old2new/',views.old2new),
     path('setlevel/',views.setWXUsertLevel),
     path('old2new_mobile/',views.old2new_mobile),
-    path('amount/',views.currentAmount)
+    path('amount/',views.currentAmount),
+    path('amount_show/',views.amount_show),
+
+    path('count/',views.money_count),
+    path('count_show/',views.money_count_show),
+
+    path('max/',views.max),
+    path('max_show/',views.max_show),
 ]

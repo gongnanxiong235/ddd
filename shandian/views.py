@@ -4,6 +4,8 @@ from shandian.tools import flexihash,re
 from shandian.models import models,models_sms,models_mongo
 import time
 from django.core.cache import cache
+from django_redis import get_redis_connection
+from datetime import date
 
 # Create your views here.
 
@@ -117,7 +119,98 @@ def setWXUsertLevel(request):
         return render(request, 'shandianjj/setlevel.html')
 
 def currentAmount(request):
-    a=cache.get('boost/transfersubmit/20190130/amount_key/68830274326559136')
-    print(a)
-    return HttpResponse(a)
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str(date.today()).replace('-','')
+    key='/boost/transfersubmit/%s/amount_key/%s'
+    if request.method=='POST':
+        user_id=request.POST.get("user_id")
+        amount=request.POST.get('amount')
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        if not amount:
+            return HttpResponse ( "请输入金额" )
+        else:
+            a=conn.set ( key %(day,user_id) ,amount)
+            return HttpResponse("ok")
+    else:
+        return render(request,'shandianjj/amount.html')
 
+
+def amount_show(request):
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str ( date.today () ).replace ( '-', '' )
+    key='/boost/transfersubmit/%s/amount_key/%s'
+    if request.method=='POST':
+        user_id=request.POST.get("user_id")
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        else:
+            a=conn.get ( key %(day,user_id))
+            return HttpResponse(str(a))
+    else:
+        return render(request,'shandianjj/amount.html')
+
+
+def money_count(request):
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str ( date.today () ).replace ( '-', '' )
+    key='/boost/transfersubmit/%s/num_key/%s'
+    if request.method == 'POST':
+        user_id=request.POST.get ( "user_id" )
+        count=request.POST.get ( 'count' )
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        if not count:
+            return HttpResponse ( "请输入次数" )
+        else:
+            a=conn.set ( key % (day, user_id), count )
+            return HttpResponse ( "ok" )
+    else:
+        return render ( request, 'shandianjj/amount.html' )
+
+def money_count_show(request):
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str ( date.today () ).replace ( '-', '' )
+    key='/boost/transfersubmit/%s/num_key/%s'
+    if request.method == 'POST':
+        user_id=request.POST.get ( "user_id" )
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        else:
+            a=conn.get ( key % (day, user_id))
+            return HttpResponse ( str(a) )
+    else:
+        return render ( request, 'shandianjj/amount.html' )
+
+
+def max(request):
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str ( date.today () ).replace ( '-', '' )
+
+    key='transfer/get/%s/%s'
+    if request.method == 'POST':
+        user_id=request.POST.get ( "user_id" )
+        max=request.POST.get ( 'max' )
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        if not max:
+            return HttpResponse ( "请输入金额" )
+        else:
+            a=conn.set ( key % (day, user_id), max )
+            return HttpResponse ( "ok" )
+    else:
+        return render ( request, 'shandianjj/amount.html' )
+
+def max_show(request):
+    conn=get_redis_connection ( 'default' )  # 建立连接 default为设置的连接名
+    day=str ( date.today () ).replace ( '-', '' )
+    key='transfer/get/%s/%s'
+    if request.method == 'POST':
+        user_id=request.POST.get ( "user_id" )
+        if not user_id:
+            return HttpResponse ( "请输入user_id" )
+        else:
+            a=conn.get ( key % (day, user_id) )
+            return HttpResponse ( str ( a ) )
+    else:
+        return render ( request, 'shandianjj/amount.html' )
