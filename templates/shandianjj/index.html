@@ -10,10 +10,8 @@
         }
         .native-out{
             width: 100%;
-            line-height: 44px;
+            line-height: 50px;
             {#position: fixed;#}
-            top: 0;
-            left: 0;
             background-color: gainsboro;
         }
         .content-out{
@@ -24,9 +22,10 @@
         }
         .native-inner{
             width: 1216px;
-            line-height: 44px;
+            line-height: 50px;
             margin: 0 auto;
             background-color:cornflowerblue;
+            border-top: #FF8500 3px solid;
             {#border: blueviolet solid 1px;#}
         }
         .content_inner{
@@ -40,12 +39,40 @@
             float: left;
             height: 1100px;
             width: 10%;
-            background: rosybrown;
+            background: #bc34b5;
         }
         .body-content{
             float: left;
             height: 1100px;
             width: 90%;
+        }
+        a{
+            color: black;
+            font-size: 15px;
+        }
+        .native-inner a{
+            height: 50px;
+            display: inline-block;
+            text-decoration: none;
+            line-height: 50px;
+            text-align: center;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+         a:hover{
+            background-color:  #edeef0;
+            color: #FF8500;
+        }
+        .body-menu a{
+            height: 50px;
+            width: 100%;
+            line-height: 50px;
+            display: block;
+            text-decoration: none;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-bottom: #FF8500 1px solid;
         }
 
     </style>
@@ -53,18 +80,21 @@
 </head>
 <body>
     <div class="native-out">
-        <div class="native-inner">淘集集-测试family
-{#            <h1>淘集集-测试family</h1>#}
+        <div class="native-inner">
+            <a href="#">淘集集后台</a>
+            <a href="#">商家后台</a>
+            <a href="#">财务后台</a>
+            <a href="#">客服系统</a>
         </div>
     </div>
     <div class="content-out">
         <div class="content_inner">
             <div class="body-menu">
-                <p><a href="/shandian/sendsms">发送短信</a></p>
-                <p><a href="/shandian/database">获取分库</a></p>
-                <p><a href="/shandian/old2new">老户2新户</a></p>
-                <p><a href="/shandian/setlevel">微信风险等级</a></p>
-                <p><a href="/shandian/amount">阈值</a></p>
+                <a href="/shandian/sendsms">发送短信</a>
+                <a href="/shandian/database">获取分库</a>
+                <a href="/shandian/old2new">老户2新户</a>
+                <a href="/shandian/setlevel">微信风险等级</a>
+                <a href="/shandian/amount">阈值</a>
             </div>
             <div class="body-content">
                 {% block content %}
