@@ -30,6 +30,7 @@ def tonew(user_id):
     # cbd_earn_account
     models.CbdEarnAccount.objects.filter(user_id=user_id).delete()
 
+
 def index(request):
     return render(request, "shandianjj/index.html")
 

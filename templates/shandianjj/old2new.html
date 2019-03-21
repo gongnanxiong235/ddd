@@ -1,7 +1,10 @@
 {% extends "shandianjj/index.html" %}
 {% block content %}
     <form>
-        <h4>USERID:<input type="text" id="olduser" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,'');}).call(this)" onblur="this.v();"> <input type="button" value="点我秒变新用户" id="oldbt"></h4>
-        <h4>MOBILE:<input type="text" id="olduser_mobile"> <input type="button" value="点我秒变新用户" id="oldbt_mobile"></h4>
+        <h4>USERID:<input type="text" id="olduser" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9]+/,'');}).call(this)" onblur="this.v();"> <input type="submit" value="点我秒变新用户"  id="oldbt"></h4>
+    </form>
+
+    <form action="">
+        <h4>MOBILE:<input type="text" id="olduser_mobile"> <input type="submit" value="点我秒变新用户" id="oldbt_mobile"></h4>
     </form>
 {% endblock %}
