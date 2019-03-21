@@ -79,6 +79,7 @@ def old2new_mobile(request):
             if flag:
                 user_id=str(models.CbdUsers.objects.filter(user_name=mobile)[0].user_id)
                 tonew(user_id)
+
                 return HttpResponse("ok")
             else:
                 return HttpResponse("此手机号码在数据库中不存在，请检查是否正确")
